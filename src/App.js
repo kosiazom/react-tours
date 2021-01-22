@@ -8,6 +8,10 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [tours, setTours] = useState([]);
 
+  const removeTour = (id) => {
+    console.log("I was clicked")
+  }
+
   const fetchTours = () => {
     fetch(url)
     .then(res => res.json())
@@ -44,7 +48,9 @@ const App = () => {
   }
 
   return (<main>
-    <Tours tours={tours} />
+    <Tours tours={tours} 
+    removeTour={removeTour}
+    />
   </main>
 
   )
